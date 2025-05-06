@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta  charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test PWA</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="manifest" href="manifest.json">
+    </head>
+    <body>
+        hi
+        <img src="chickensong.jpg" alt="Chicken song">
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js');
+            }
+        </script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyDqRgjHReO4dBqUUlqb1NfAetfaP_EYw5o",
+              authDomain: "test-42096.firebaseapp.com",
+              projectId: "test-42096",
+              storageBucket: "test-42096.firebasestorage.app",
+              messagingSenderId: "970527980350",
+              appId: "1:970527980350:web:64a9b808970596abe78a6f",
+              measurementId: "G-WJJZE83CPS"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
+    </body>
+</html>
