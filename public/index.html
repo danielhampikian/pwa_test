@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Swipey PWA</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#AF7DFF"> <!-- Optional: Customize theme color -->
+</head>
+<body>
+
+    <div id="app-container">
+        <div class="screen active" id="screen1">
+            <h1>Screen 1</h1>
+            <p>Swipe left to go to Screen 2!</p>
+        </div>
+        <div class="screen" id="screen2">
+            <h1>Screen 2</h1>
+            <p>Swipe left for Screen 3, or right for Screen 1!</p>
+        </div>
+        <div class="screen" id="screen3">
+            <h1>Screen 3</h1>
+            <p>Swipe right to go back to Screen 2!</p>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script>
+        // Register the service worker if the browser supports it
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(reg) {
+                    console.log('Service Worker registered!', reg);
+                })
+                .catch(function(err) {
+                    console.log('Service Worker registration failed: ', err);
+                });
+        }
+    </script>
+</body>
+</html>
